@@ -1,12 +1,49 @@
-# React + Vite
+# Dynamic Form Generator with Validation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React app that dynamically builds a form from a JSON schema, validates inputs on submit, and displays errors inline or shows submitted data as formatted JSON.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Dynamically renders form fields based on a JSON schema.
+- Supports input types: text, email, number, select, checkbox.
+- Validates fields according to rules like required, minLength, maxLength, min, max.
+- Displays validation errors right below each field.
+- Shows the submitted form data as a nicely formatted JSON block.
+- Prevents page reload on form submission.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+- React 
+- JavaScript (ES6+) 
+
+---
+
+## JSON Schema Format
+
+
+Example schema:
+
+```json
+[
+  { label: "Name", type: "text", name: "name", required: true, minLength: 3 },
+  { label: "Email", type: "email", name: "email", required: true },
+  { label: "Age", type: "number", name: "age", required: false, min: 18, max: 100 },
+  { label: "Gender", type: "select", name: "gender", required: true, options: ["Male", "Female", "Other"] },
+  { label: "Subscribe to newsletter", type: "checkbox", name: "subscribe", required: false },
+];
+
+```
+## How to Use
+-- Clone the repo
+
+git clone https://github.com/psharvari11/elevate/edit/main/dynamic-form.git
+cd dynamic-form
+-- Install dependencies
+npm install
+-- Start the app
+npm start
+Open localhost to see the form in action.
